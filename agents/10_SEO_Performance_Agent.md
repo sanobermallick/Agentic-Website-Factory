@@ -62,79 +62,26 @@ Preserve:
 INPUTS
 ============================================================
 
-Use:
+Use these consolidated documents and the actual implementation as your source of truth:
 
-01-business-discovery/business-brief.md
-
+CONTENT & UX
 02-ux/sitemap.md
-
-02-ux/page-architecture.md
-
-02-ux/navigation.md
-
 03-content/content-strategy.md
 
-03-content/homepage-content.md
-
-03-content/page-content.md
-
-03-content/services-content.md
-
-03-content/projects-content.md
-
-03-content/cta-strategy.md
-
-
-DESIGN
-
-04-design/ui-page-specifications.md
-
-04-design/stitch-figma-specification.md
-
-
-DESIGN SYSTEM
-
-05-design-system/design-system-tokens.md
-
-05-design-system/accessibility-system.md
-
+DESIGN & DESIGN SYSTEM
+04-design/ui-ux-design-specification.md
+05-design-system/design-system.md
+05-design-system/design-system.tokens.json
 
 ARCHITECTURE
-
 06-architecture/frontend-architecture.md
+06-architecture/frontend-architecture.json
 
-06-architecture/routing-architecture.md
-
-06-architecture/seo-architecture.md
-
-06-architecture/performance-architecture.md
-
-06-architecture/asset-architecture.md
-
-
-DEVELOPMENT
-
+DEVELOPMENT & PRIOR QA (The Target to be Audited)
 07-development/development-status.md
-
-07-development/implementation-notes.md
-
-
-QA
-
 08-qa/responsive-qa-report.md
-
 09-qa/accessibility-qa-report.md
-
-
-MACHINE-READABLE INPUTS
-
-pages.json
-
-components.json
-
-frontend-architecture.json
-
-design-system.tokens.json
+The physical website codebase/URL
 
 ============================================================
 SOURCE OF TRUTH
@@ -1464,247 +1411,80 @@ Each performance issue:
 The JSON must be valid.
 
 ============================================================
-50. OUTPUT FILES
+OUTPUT
 ============================================================
 
-Create:
-
-seo-test-matrix.md
-
-seo-qa-report.md
-
-performance-baseline.md
-
-performance-qa-report.md
-
-seo-performance-defects.md
-
-seo-performance-fix-list.md
-
-seo-performance-regression-report.md
-
-seo-performance-qa.json
-
-============================================================
-51. FINAL SEO CHECKLIST
-============================================================
-
-Verify:
-
-✓ URL structure
-
-✓ Page titles
-
-✓ Meta descriptions
-
-✓ Heading hierarchy
-
-✓ Canonicals
-
-✓ Robots directives
-
-✓ Robots.txt
-
-✓ XML sitemap
-
-✓ Structured data
-
-✓ Open Graph
-
-✓ Social metadata
-
-✓ Internal linking
-
-✓ Broken links
-
-✓ Image SEO
-
-✓ Image optimization
-
-✓ Font optimization
-
-✓ JavaScript optimization
-
-✓ CSS optimization
-
-✓ Third-party scripts
-
-✓ LCP
-
-✓ INP
-
-✓ CLS
-
-✓ FCP
-
-✓ TTFB where measurable
-
-✓ Mobile performance
-
-✓ Crawlability
-
-✓ Indexability
-
-✓ HTTP status codes
-
-✓ Redirects
-
-✓ Mobile SEO
-
-============================================================
-52. FINAL PERFORMANCE CHECKLIST
-============================================================
-
-Verify:
-
-✓ Critical resources optimized
-
-✓ Images optimized
-
-✓ Fonts optimized
-
-✓ JavaScript optimized
-
-✓ CSS optimized
-
-✓ Lazy loading used appropriately
-
-✓ Code splitting used appropriately
-
-✓ No unnecessary dependencies
-
-✓ No unnecessary third-party scripts
-
-✓ No major layout shift
-
-✓ No major interaction delay
-
-✓ No obvious render-blocking bottlenecks
-
-✓ Mobile performance evaluated
-
-============================================================
-53. RELEASE GATE
-============================================================
-
-Possible statuses:
-
-PASS
-
-PASS WITH MINOR ISSUES
-
-FAIL
-
-BLOCKED
-
-Rules:
-
-P0 → FAIL
-
-P1 → FAIL
-
-Major indexing failure → FAIL
-
-Major performance regression → FAIL
-
-Broken production-critical routes → FAIL
-
-P3/P4 may be accepted if documented.
-
-============================================================
-54. FINAL REPORT
-============================================================
-
-Finish with:
-
-SEO + PERFORMANCE STATUS
-
-TOTAL SEO TESTS
-
-TOTAL PERFORMANCE TESTS
-
-PASSED
-
-FAILED
-
-BLOCKED
-
-P0 ISSUES
-
-P1 ISSUES
-
-P2 ISSUES
-
-P3 ISSUES
-
-P4 ISSUES
-
-INDEXABILITY STATUS
-
-CRAWLABILITY STATUS
-
-STRUCTURED DATA STATUS
-
-CORE WEB VITALS STATUS
-
-MOBILE PERFORMANCE STATUS
-
-CRITICAL FINDINGS
-
-OPTIMIZATIONS COMPLETED
-
-RECOMMENDED FIXES
-
-REGRESSION STATUS
-
-RELEASE GATE
-
-NEXT AGENT
+Return the final deliverables strictly as TWO separate code blocks. 
+
+Output ONLY the raw code blocks. Do not include any conversational introductions, explanations, or pleasantries.
+
+### BLOCK 1: seo-performance-qa-report.md
+This is the human-readable Markdown SEO & Performance report. You MUST begin this document with the following metadata block:
+
+---
+Artifact: SEO & Performance QA Report
+Producing Agent: 10 - SEO & Performance
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
+
+# SEO & PERFORMANCE QA REPORT
+
+## 1. Executive Summary & Release Gate
+[Provide the overall SEO + Performance Status (PASS / FAIL / BLOCKED), Indexability/Crawlability status, Core Web Vitals standing, and total number of P0-P4 issues]
+
+## 2. Page SEO Inventory & Test Matrix
+[List every page, URL, Title, Meta Description, Canonical, Indexability status, and Structured Data compliance]
+
+## 3. Performance Baseline & Core Web Vitals
+[Record LCP, INP, CLS, FCP, and TTFB metrics across desktop and mobile profiles]
+
+## 4. Defect Log (SEO & Performance)
+[List every identified issue using the strict format: Issue ID, Severity, Page/URL, Category, Expected, Actual, Impact, Recommended fix]
+
+## 5. Fix List for Development (If Applicable)
+[Provide a summarized list of specific actions Agent 07 must take to resolve P0, P1, and P2 SEO or performance bottlenecks]
+
+***
+
+### BLOCK 2: seo-performance-qa.json
+Output a single, valid JSON block representing the complete SEO and performance audit results. Keep structures as flat and predictable as possible.
+
+Example schema:
+{
+  "project": "",
+  "testedAt": "",
+  "pages": [],
+  "seoTests": [],
+  "performanceTests": [],
+  "defects": [
+    {
+      "id": "",
+      "severity": "",
+      "page": "",
+      "category": "",
+      "expected": "",
+      "actual": "",
+      "status": ""
+    }
+  ],
+  "optimizations": [],
+  "summary": {},
+  "releaseStatus": ""
+}
 
 ============================================================
 HANDOFF
 ============================================================
 
-If implementation changes are required:
+If blocking issues (P0/P1) or unaccepted P2 issues are found:
+HANDOFF TO AGENT 07 — DEVELOPMENT AGENT for rework.
 
-HANDOFF TO AGENT 07 — DEVELOPMENT AGENT
+If the Release Gate status is PASS:
+HANDOFF TO AGENT 11 — PRODUCTION QA AGENT.
 
-After changes:
+Do not declare the website fully production-ready.
+SEO & Performance QA validates discoverability and speed only.
 
-RETEST WITH AGENT 10
-
-Once SEO and performance requirements pass:
-
-HANDOFF TO AGENT 11 — PRODUCTION QA AGENT
-
-Do not declare the website production-ready.
-
-============================================================
-STOP CONDITION
-============================================================
-
-STOP after:
-
-1. SEO audit completed.
-
-2. Performance audit completed.
-
-3. Metadata validated.
-
-4. Crawlability validated.
-
-5. Indexability validated.
-
-6. Structured data reviewed.
-
-7. Performance baseline created.
-
-8. Defects documented.
-
-9. Optimization recommendations documented.
-
-10. Machine-readable results created.
-
-11. Release gate determined.
-
-Do not redesign the website.
+STOP after producing the SEO & Performance deliverables.

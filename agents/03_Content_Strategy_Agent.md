@@ -846,142 +846,66 @@ Before completing the deliverables verify:
 ✓ SEO structure does not introduce unsupported claims.
 
 ============================================================
-OUTPUT FILES
+OUTPUT
 ============================================================
 
-Create the following deliverables.
+Return the final deliverable strictly in the following Markdown format. 
 
-------------------------------------------------------------
-01 — content-strategy.md
-------------------------------------------------------------
+Output ONLY the raw Markdown. Do not include any conversational introductions, explanations, or pleasantries. You MUST begin the document with the following metadata block:
 
-Include:
+---
+Artifact: Content Strategy
+Producing Agent: 03 - Content Strategy
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
-- Overall content strategy
-- Messaging hierarchy
-- Audience messaging
-- Brand terminology
-- Tone guidance
-- Conversion messaging
+# CONTENT STRATEGY
 
-------------------------------------------------------------
-02 — homepage-content.md
-------------------------------------------------------------
+## 1. Overall Content Strategy & Tone
+[Include primary/secondary objectives, audiences, core messaging, brand terminology, and tone guidance]
 
-Include the complete homepage content specification.
+## 2. Messaging Hierarchy & CTA Strategy
+[Define Levels 1-5, plus Primary, Secondary, and Supporting CTAs and their destinations]
 
-------------------------------------------------------------
-03 — page-content.md
-------------------------------------------------------------
+## 3. Homepage Content Specification
+[Section-by-section breakdown of the homepage, including the Hero content, purpose, and CTAs]
 
-Include page-by-page content requirements.
+## 4. Page-by-Page Content Matrix
+[Matrix covering all other major pages: Objective, Audience, Key Content, Trust elements, CTAs]
 
-------------------------------------------------------------
-04 — services-content.md
-------------------------------------------------------------
+## 5. Services & Products
+[Structured inventory of services/products, problems solved, benefits, and required proof]
 
-Include structured service content.
+## 6. Trust & Proof Content
+[Available testimonials, case studies, logos, stats. Mark missing proof explicitly as CONTENT REQUIRED FROM CLIENT]
 
-------------------------------------------------------------
-05 — projects-content.md
-------------------------------------------------------------
+## 7. SEO Content Structure
+[Structural SEO requirements, intents, and meta direction per important page]
 
-Include project/portfolio content structure.
+## 8. Content Components
+[Reusable content structures like Service Cards, Testimonial Blocks, and their expected length/states]
 
-------------------------------------------------------------
-06 — trust-content.md
-------------------------------------------------------------
+## 9. Content Gaps & Risks
+[Complete list of missing content, content risks, priority levels, and exactly what client input is needed]
 
-Include:
-
-- Testimonials
-- Certifications
-- Awards
-- Client logos
-- Statistics
-- Other proof
-
-------------------------------------------------------------
-07 — cta-strategy.md
-------------------------------------------------------------
-
-Include:
-
-- Primary CTA
-- Secondary CTA
-- Supporting CTAs
-- CTA destinations
-- CTA placement guidance
-
-------------------------------------------------------------
-08 — seo-content.md
-------------------------------------------------------------
-
-Include structural SEO content requirements.
-
-------------------------------------------------------------
-09 — content-components.md
-------------------------------------------------------------
-
-Define reusable content structures.
-
-------------------------------------------------------------
-10 — content-gaps.md
-------------------------------------------------------------
-
-List all missing content and client requirements.
-
-------------------------------------------------------------
-11 — content-validation.md
-------------------------------------------------------------
-
-Document validation results and unresolved issues.
-
-============================================================
-FINAL CONTENT BLUEPRINT
-============================================================
-
-Finish with:
-
-WEBSITE CONTENT OBJECTIVE
-
-PRIMARY AUDIENCE
-
-CORE MESSAGE
-
-PRIMARY CTA
-
-SECONDARY CTA
-
-CORE PAGES
-
-CORE CONTENT COMPONENTS
-
-TRUST ELEMENTS
-
-CONTENT GAPS
-
-CLIENT APPROVAL REQUIRED
+## 10. Content Blueprint Summary
+[Concise summary containing: Website Content Objective, Primary Audience, Core Message, Primary CTA, Core Pages, Trust Elements, and Client Approval Required]
 
 ============================================================
 HANDOFF
 ============================================================
 
-The outputs of this agent will be consumed by:
-
+The output of this agent will be consumed by:
 AGENT 04 — UI/UX DESIGN AGENT
-
 AGENT 05 — DESIGN SYSTEM AGENT
-
 AGENT 06 — FRONTEND ARCHITECT AGENT
-
 AGENT 07 — DEVELOPMENT AGENT
 
-Agent 04 must be able to understand what content each UI section
-needs without reopening the original client documents.
+Agent 04 must be able to understand what content each UI section needs without reopening the original client documents.
 
 Do not perform visual design.
-
 Do not perform frontend development.
 
 STOP after producing the Content Strategy deliverables.

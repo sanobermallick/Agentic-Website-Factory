@@ -1316,107 +1316,70 @@ Check:
 ✓ Design system matches Agent 04.
 
 ============================================================
-OUTPUT FILES
+OUTPUT
 ============================================================
 
-Create:
+Return the final deliverables strictly as THREE separate code blocks. 
 
-01 — design-system-overview.md
+Output ONLY the raw code blocks. Do not include any conversational introductions, explanations, or pleasantries.
 
-02 — design-system-tokens.md
+### BLOCK 1: design-system.md
+This is the human-readable Markdown specification. You MUST begin this document with the following metadata block:
 
-03 — component-library.md
+---
+Artifact: Design System Specification
+Producing Agent: 05 - Design System
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
-04 — component-contracts.md
+# DESIGN SYSTEM SPECIFICATION
 
-05 — responsive-system.md
+## 1. Design System Foundation & Principles
+[Include brand personality, visual, UX, and accessibility principles]
 
-06 — accessibility-system.md
+## 2. Token System
+[Define semantic rules and values for Colors, Typography, Spacing, Radius, Borders, Shadows, Icons, and Z-index]
 
-07 — motion-system.md
+## 3. Grid & Breakpoint System
+[Define the layout grid, maximum widths, and strict breakpoint ranges]
 
-08 — figma-implementation-guide.md
+## 4. Component Architecture & Contracts
+[Provide the component inventory. For each, define the ID, purpose, variants, states, required props, and responsive behavior]
 
-09 — stitch-implementation-guide.md
+## 5. Interaction & Motion System
+[Define semantic motion tokens, durations, and state changes (hover, focus, disabled)]
 
-10 — ai-studio-implementation-guide.md
+## 6. Accessibility System
+[Define system-wide rules for contrast, focus indicators, touch targets, and reduced motion]
 
-11 — claude-agent-implementation-guide.md
+## 7. Implementation Guidelines
+[Provide explicit rules for how this system must be structured in Figma, Stitch, Google AI Studio, and by Claude/AI coding agents]
 
-12 — design-system-qa.md
+## 8. Design System QA
+[Include the final validation checklist, open questions, and missing inputs]
 
-13 — design-system.tokens.json
+***
 
-14 — design-system.components.json
+### BLOCK 2: design-system.tokens.json
+Output a single, valid JSON block containing the structural design tokens (colors, typography, spacing, breakpoints, radius, shadows, motion, z-index). Keep structures as flat and predictable as possible.
 
-============================================================
-FINAL DESIGN SYSTEM HANDOFF
-============================================================
+***
 
-Finish with:
-
-DESIGN SYSTEM VERSION
-
-DESIGN PRINCIPLES
-
-COLOR SYSTEM
-
-TYPOGRAPHY SYSTEM
-
-SPACING SYSTEM
-
-LAYOUT SYSTEM
-
-BREAKPOINT SYSTEM
-
-COMPONENT SYSTEM
-
-MOTION SYSTEM
-
-ACCESSIBILITY SYSTEM
-
-FIGMA STRUCTURE
-
-STITCH STRUCTURE
-
-AI STUDIO IMPLEMENTATION RULES
-
-CLAUDE AGENT IMPLEMENTATION RULES
-
-OPEN QUESTIONS
-
-CLIENT APPROVAL REQUIRED
+### BLOCK 3: design-system.components.json
+Output a single, valid JSON block representing the reusable components. Each component must include its ID, name, purpose, variants, sizes, states, and responsive rules.
 
 ============================================================
 HANDOFF
 ============================================================
 
 The outputs of this agent will be consumed by:
-
 AGENT 06 — FRONTEND ARCHITECT AGENT
-
 AGENT 07 — DEVELOPMENT AGENT
 
-AGENT 08 — RESPONSIVE QA AGENT
-
-AGENT 09 — ACCESSIBILITY QA AGENT
-
-AGENT 10 — SEO / PERFORMANCE AGENT
-
-AGENT 11 — PRODUCTION QA AGENT
-
 The Design System is the implementation contract.
+Downstream agents must not arbitrarily redefine colors, typography, spacing, breakpoints, components, states, or responsive rules.
 
-Downstream agents must not arbitrarily redefine:
-
-- colors
-- typography
-- spacing
-- breakpoints
-- components
-- states
-- responsive rules
-
-Any required deviation must be explicitly documented.
-
+Do not write frontend application code.
 STOP after producing the Design System deliverables.

@@ -76,62 +76,22 @@ appropriate formal audit has actually been performed.
 INPUTS
 ============================================================
 
-Use:
+Use these consolidated documents and the actual implementation as your source of truth:
 
-04-design/accessibility-specification.md
-
-04-design/ui-page-specifications.md
-
-04-design/component-specifications.md
-
-04-design/responsive-specification.md
-
-04-design/interaction-specification.md
-
-04-design/stitch-figma-specification.md
-
-
-DESIGN SYSTEM
-
-05-design-system/accessibility-system.md
-
-05-design-system/component-contracts.md
-
-05-design-system/design-system-tokens.md
-
+DESIGN & DESIGN SYSTEM
+04-design/ui-ux-design-specification.md
+05-design-system/design-system.md
+05-design-system/design-system.tokens.json
+05-design-system/design-system.components.json
 
 ARCHITECTURE
-
-06-architecture/accessibility-architecture.md
-
-06-architecture/component-architecture.md
-
 06-architecture/frontend-architecture.md
+06-architecture/frontend-architecture.json
 
-
-DEVELOPMENT
-
+DEVELOPMENT & RESPONSIVE QA (The Target to be Tested)
 07-development/development-status.md
-
-07-development/implementation-notes.md
-
-
-RESPONSIVE QA
-
 08-qa/responsive-qa-report.md
-
-08-qa/responsive-defects.md
-
-08-qa/responsive-fix-list.md
-
-
-MACHINE-READABLE FILES
-
-design-system.tokens.json
-
-design-system.components.json
-
-frontend-architecture.json
+The physical website codebase/URL
 
 ============================================================
 SOURCE OF TRUTH
@@ -1196,343 +1156,80 @@ Retest:
 Result:
 
 ============================================================
-43. ACCESSIBILITY FIX LIST
+OUTPUT
 ============================================================
 
-Create:
+Return the final deliverables strictly as TWO separate code blocks. 
 
-accessibility-fix-list.md
+Output ONLY the raw code blocks. Do not include any conversational introductions, explanations, or pleasantries.
 
-For every failed item provide:
+### BLOCK 1: accessibility-qa-report.md
+This is the human-readable Markdown QA report. You MUST begin this document with the following metadata block:
 
-Issue ID
+---
+Artifact: Accessibility QA Report
+Producing Agent: 09 - Accessibility QA
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
-Severity
+# ACCESSIBILITY QA REPORT
 
-WCAG reference
+## 1. Executive Summary & Release Gate
+[Provide the overall Accessibility QA Status (PASS / FAIL / BLOCKED), WCAG standard used, Pass percentage, and total number of P0-P4 issues]
 
-Page
+## 2. Accessibility Test Matrix
+[List Pages tested, along with pass/fail status for Keyboard, Focus, Headings, Landmarks, Links, Forms, Contrast, Zoom, and Screen Reader]
 
-Component
+## 3. Accessibility Defect Log
+[List every identified defect using the strict format: Issue ID, Severity, WCAG Reference, Page, Component, Expected, Actual, Recommended fix]
 
-Expected
+## 4. Fix List for Development (If Applicable)
+[Provide a summarized list of specific actions Agent 07 must take to resolve P0, P1, and P2 defects]
 
-Actual
+## 5. QA Checklist Verification
+[Confirm the final accessibility QA checklist items have been checked (e.g., Semantic HTML, Focus order, Alt text)]
 
-Recommended fix
+***
 
-Developer action
+### BLOCK 2: accessibility-qa.json
+Output a single, valid JSON block representing the complete accessibility test results. Keep structures as flat and predictable as possible.
 
-Retest required
-
-============================================================
-44. ACCESSIBILITY QA REPORT
-============================================================
-
-Create:
-
-accessibility-qa-report.md
-
-Include:
-
-Executive summary
-
-Standard used
-
-Pages tested
-
-Components tested
-
-Automated tests
-
-Manual tests
-
-Keyboard tests
-
-Screen-reader tests
-
-Zoom tests
-
-Contrast tests
-
-Critical findings
-
-Major findings
-
-Minor findings
-
-Passed areas
-
-Failed areas
-
-Blocked tests
-
-Recommended fixes
-
-============================================================
-45. ACCESSIBILITY SCORECARD
-============================================================
-
-Record:
-
-Total tests
-
-Passed
-
-Failed
-
-Blocked
-
-P0
-
-P1
-
-P2
-
-P3
-
-P4
-
-Automated test result
-
-Manual test result
-
-Keyboard result
-
-Screen-reader result
-
-Do not use a numerical score to hide critical failures.
-
-============================================================
-46. ACCESSIBILITY RELEASE GATE
-============================================================
-
-Possible statuses:
-
-PASS
-
-PASS WITH MINOR ISSUES
-
-FAIL
-
-BLOCKED
-
-Rules:
-
-P0 → FAIL
-
-P1 → FAIL
-
-Major keyboard barriers → FAIL
-
-Essential content inaccessible → FAIL
-
-Critical form accessibility failure → FAIL
-
-Minor issues may be accepted only if documented.
-
-============================================================
-47. MACHINE-READABLE OUTPUT
-============================================================
-
-Create:
-
-accessibility-qa.json
-
-Structure:
-
+Example schema:
 {
   "project": "",
   "standard": "WCAG 2.2 AA",
   "testedAt": "",
   "pages": [],
   "tests": [],
-  "defects": [],
+  "defects": [
+    {
+      "id": "",
+      "severity": "",
+      "wcag": "",
+      "page": "",
+      "component": "",
+      "expected": "",
+      "actual": "",
+      "status": ""
+    }
+  ],
   "summary": {},
   "releaseStatus": ""
 }
-
-Each defect:
-
-{
-  "id": "",
-  "severity": "",
-  "wcag": "",
-  "page": "",
-  "component": "",
-  "expected": "",
-  "actual": "",
-  "status": ""
-}
-
-The JSON must be valid.
-
-============================================================
-48. FINAL ACCESSIBILITY CHECKLIST
-============================================================
-
-Verify:
-
-✓ Semantic HTML
-
-✓ Heading hierarchy
-
-✓ Landmarks
-
-✓ Keyboard navigation
-
-✓ Focus visibility
-
-✓ Focus order
-
-✓ Skip navigation
-
-✓ Links
-
-✓ Buttons
-
-✓ Icons
-
-✓ Images
-
-✓ Forms
-
-✓ Form errors
-
-✓ Required fields
-
-✓ Color contrast
-
-✓ Non-color information
-
-✓ Text resizing
-
-✓ Zoom
-
-✓ Mobile accessibility
-
-✓ Modals
-
-✓ Accordions
-
-✓ Tabs
-
-✓ Carousels where applicable
-
-✓ Reduced motion
-
-✓ Dynamic content
-
-✓ Language
-
-✓ Page titles
-
-✓ Error messages
-
-✓ Status messages
-
-✓ Automated accessibility testing where available
-
-✓ Manual accessibility testing
-
-✓ Screen-reader testing where available
-
-✓ Accessibility regression testing
-
-============================================================
-49. FINAL ACCESSIBILITY REPORT
-============================================================
-
-Finish with:
-
-ACCESSIBILITY QA STATUS
-
-STANDARD USED
-
-TOTAL TESTS
-
-PASSED
-
-FAILED
-
-BLOCKED
-
-P0 ISSUES
-
-P1 ISSUES
-
-P2 ISSUES
-
-P3 ISSUES
-
-P4 ISSUES
-
-KEYBOARD STATUS
-
-SCREEN READER STATUS
-
-CONTRAST STATUS
-
-ZOOM STATUS
-
-MOBILE ACCESSIBILITY STATUS
-
-MOTION STATUS
-
-AUTOMATED TEST STATUS
-
-MANUAL TEST STATUS
-
-CRITICAL FINDINGS
-
-RECOMMENDED FIXES
-
-REGRESSION STATUS
-
-RELEASE GATE
-
-NEXT AGENT
 
 ============================================================
 HANDOFF
 ============================================================
 
-If accessibility issues are found:
+If blocking issues (P0/P1) or unaccepted P2 issues are found:
+HANDOFF TO AGENT 07 — DEVELOPMENT AGENT for rework.
 
-HANDOFF TO AGENT 07 — DEVELOPMENT AGENT
+If the Release Gate status is PASS:
+HANDOFF TO AGENT 10 — SEO / PERFORMANCE AGENT.
 
-After fixes:
+Do not declare the website fully production-ready.
+Accessibility QA validates accessibility only.
 
-RETEST WITH AGENT 09
-
-Once accessibility passes:
-
-HANDOFF TO AGENT 10 — SEO / PERFORMANCE AGENT
-
-Do not declare the website production-ready.
-
-============================================================
-STOP CONDITION
-============================================================
-
-STOP after:
-
-1. Testing the available pages.
-
-2. Testing relevant components.
-
-3. Performing automated tests where available.
-
-4. Performing manual accessibility tests.
-
-5. Documenting defects.
-
-6. Producing the accessibility matrix.
-
-7. Producing the accessibility QA report.
-
-8. Producing machine-readable results.
-
-9. Defining the accessibility release gate.
-
-Do not redesign the website.
+STOP after producing the QA deliverables.

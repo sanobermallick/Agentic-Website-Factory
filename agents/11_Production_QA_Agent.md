@@ -124,109 +124,28 @@ Do not silently resolve it.
 INPUTS
 ============================================================
 
-BUSINESS
+Use these consolidated upstream artifacts and prior QA reports as your source of truth:
 
+BUSINESS & UX
 01-business-discovery/business-brief.md
-
-
-UX
-
 02-ux/sitemap.md
 
-02-ux/page-architecture.md
-
-02-ux/navigation.md
-
-02-ux/user-flows.md
-
-
-CONTENT
-
+CONTENT & DESIGN
 03-content/content-strategy.md
+04-design/ui-ux-design-specification.md
 
-03-content/page-content.md
-
-
-DESIGN
-
-04-design/ui-page-specifications.md
-
-04-design/stitch-figma-specification.md
-
-
-DESIGN SYSTEM
-
-05-design-system/design-system-overview.md
-
-05-design-system/component-library.md
-
-05-design-system/component-contracts.md
-
-
-ARCHITECTURE
-
+DESIGN SYSTEM & ARCHITECTURE
+05-design-system/design-system.md
+05-design-system/design-system.tokens.json
 06-architecture/frontend-architecture.md
+06-architecture/frontend-architecture.json
 
-06-architecture/technology-stack.md
-
-06-architecture/project-structure.md
-
-06-architecture/routing-architecture.md
-
-
-DEVELOPMENT
-
+DEVELOPMENT & PRIOR QA REPORTS (The Target to be Audited)
 07-development/development-status.md
-
-07-development/development-qa.md
-
-07-development/implementation-notes.md
-
-
-RESPONSIVE QA
-
 08-qa/responsive-qa-report.md
-
-08-qa/responsive-fix-list.md
-
-08-qa/responsive-regression-report.md
-
-
-ACCESSIBILITY QA
-
 09-qa/accessibility-qa-report.md
-
-09-qa/accessibility-fix-list.md
-
-09-qa/accessibility-regression-report.md
-
-
-SEO / PERFORMANCE
-
-10-qa/seo-qa-report.md
-
-10-qa/performance-qa-report.md
-
-10-qa/seo-performance-fix-list.md
-
-10-qa/seo-performance-regression-report.md
-
-
-MACHINE-READABLE INPUTS
-
-pages.json
-
-components.json
-
-frontend-architecture.json
-
-design-system.tokens.json
-
-responsive-qa.json
-
-accessibility-qa.json
-
-seo-performance-qa.json
+10-qa/seo-performance-qa-report.md
+The physical website build/codebase/URL
 
 ============================================================
 FINAL QA PRINCIPLE
@@ -1495,169 +1414,47 @@ Design issue:
 Do not fix issues outside the QA agent's role.
 
 ============================================================
-47. FINAL RELEASE MATRIX
+OUTPUT
 ============================================================
 
-Create:
+Return the final deliverables strictly as TWO separate code blocks. 
 
-production-release-matrix.md
+Output ONLY the raw code blocks. Do not include any conversational introductions, explanations, or pleasantries.
 
-Include:
+### BLOCK 1: production-qa-report.md
+This is the human-readable Markdown Production QA report. You MUST begin this document with the following metadata block:
 
-Business
+---
+Artifact: Production QA Report
+Producing Agent: 11 - Production QA
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
-UX
+# PRODUCTION QA REPORT
 
-Content
+## 1. Executive Summary & Release Recommendation
+[Provide the overall Release Status (READY FOR PRODUCTION / READY WITH ACCEPTED MINOR ISSUES / NOT READY / BLOCKED), Build status, Environment validated, and total number of P0-P4 defects]
 
-Design
+## 2. Complete Release Matrix
+[Summarize validation results across Business, UX, Content, Design, Architecture, Development, Responsive, Accessibility, SEO, Performance, Security, and Smoke Test]
 
-Design system
+## 3. Critical User Journeys & Route Status
+[Document results for critical user journeys (JOURNEY-001, etc.) and core route accessibility (/, /about, /services, /contact)]
 
-Architecture
+## 4. Production Defect Log & Ownership
+[List every identified issue using the strict format: Issue ID, Severity, Category, Page, Expected, Actual, Owner Agent, Status]
 
-Development
+## 5. Final Production Checklist
+[Confirm the final production verification items have passed (Build, Routes, Forms, CTAs, Metadata, Environment Variables, Security Sanity Check)]
 
-Responsive
+***
 
-Accessibility
+### BLOCK 2: production-qa.json
+Output a single, valid JSON block representing the complete production release audit results. Keep structures as flat and predictable as possible.
 
-SEO
-
-Performance
-
-Security sanity check
-
-Deployment
-
-Forms
-
-Integrations
-
-User journeys
-
-Smoke test
-
-Release status
-
-============================================================
-48. FINAL QA REPORT
-============================================================
-
-Create:
-
-production-qa-report.md
-
-Include:
-
-Executive summary
-
-Environment
-
-Build result
-
-Routes tested
-
-Functional tests
-
-Responsive status
-
-Accessibility status
-
-SEO status
-
-Performance status
-
-Security sanity check
-
-Integration status
-
-User journey status
-
-Smoke test
-
-Defects
-
-Open issues
-
-Release recommendation
-
-============================================================
-49. PRODUCTION CHECKLIST
-============================================================
-
-Verify:
-
-✓ Build passes
-
-✓ Application starts
-
-✓ All required routes work
-
-✓ Navigation works
-
-✓ Forms work
-
-✓ CTAs work
-
-✓ Assets load
-
-✓ Fonts load
-
-✓ No critical console errors
-
-✓ No critical network errors
-
-✓ Responsive QA passed
-
-✓ Accessibility QA passed
-
-✓ SEO QA passed
-
-✓ Performance QA passed
-
-✓ No placeholder content
-
-✓ Branding correct
-
-✓ Favicon correct
-
-✓ Metadata correct
-
-✓ Sitemap correct
-
-✓ Robots configuration correct
-
-✓ Structured data validated where applicable
-
-✓ Environment variables configured
-
-✓ No secrets exposed
-
-✓ Approved integrations tested
-
-✓ 404 tested
-
-✓ Deep links tested
-
-✓ Refresh tested
-
-✓ Back/forward tested
-
-✓ Critical user journeys tested
-
-✓ Smoke test passed
-
-============================================================
-50. MACHINE-READABLE OUTPUT
-============================================================
-
-Create:
-
-production-qa.json
-
-Structure:
-
+Example schema:
 {
   "project": "",
   "testedAt": "",
@@ -1666,7 +1463,18 @@ Structure:
   "routes": [],
   "functionalTests": [],
   "userJourneys": [],
-  "defects": [],
+  "defects": [
+    {
+      "id": "",
+      "severity": "",
+      "category": "",
+      "page": "",
+      "expected": "",
+      "actual": "",
+      "ownerAgent": "",
+      "status": ""
+    }
+  ],
   "previousQaStatus": {
     "responsive": "",
     "accessibility": "",
@@ -1676,175 +1484,16 @@ Structure:
   "releaseStatus": ""
 }
 
-Each defect:
-
-{
-  "id": "",
-  "severity": "",
-  "category": "",
-  "page": "",
-  "expected": "",
-  "actual": "",
-  "ownerAgent": "",
-  "status": ""
-}
-
-The JSON must be valid.
-
 ============================================================
-51. RELEASE GATE
+HANDOFF
 ============================================================
 
-Possible final statuses:
-
-READY FOR PRODUCTION
-
-READY WITH ACCEPTED MINOR ISSUES
-
-NOT READY
-
-BLOCKED
-
-Rules:
-
-P0 → NOT READY
-
-P1 → NOT READY
-
-Critical user journey failure → NOT READY
-
-Build failure → NOT READY
-
-Critical security exposure → NOT READY
-
-Critical accessibility failure → NOT READY
-
-Critical indexability failure → NOT READY
-
-Minor issues may be accepted only if explicitly documented.
-
-============================================================
-52. RELEASE APPROVAL
-============================================================
-
-The Production QA Agent must NOT automatically deploy the website.
-
-It provides:
-
-RELEASE RECOMMENDATION
-
-The final human/project owner decides whether to publish.
-
-============================================================
-53. FINAL PRODUCTION REPORT
-============================================================
-
-Finish with:
-
-PROJECT
-
-ENVIRONMENT
-
-BUILD STATUS
-
-ROUTE STATUS
-
-FUNCTIONAL STATUS
-
-RESPONSIVE STATUS
-
-ACCESSIBILITY STATUS
-
-SEO STATUS
-
-PERFORMANCE STATUS
-
-SECURITY SANITY STATUS
-
-INTEGRATION STATUS
-
-USER JOURNEY STATUS
-
-SMOKE TEST STATUS
-
-P0 ISSUES
-
-P1 ISSUES
-
-P2 ISSUES
-
-P3 ISSUES
-
-P4 ISSUES
-
-OPEN ISSUES
-
-RECOMMENDED ACTIONS
-
-RELEASE RECOMMENDATION
-
-============================================================
-54. HANDOFF
-============================================================
-
-If defects exist:
-
-HANDOFF TO APPROPRIATE AGENT.
-
-After fixes:
-
-RETEST.
+If blocking issues (P0/P1) or unaccepted P2 issues are found:
+HANDOFF TO THE APPROPRIATE AGENT (Agent 07, 08, 09, or 10 based on defect ownership).
 
 If all production gates pass:
-
-STATUS:
-
-READY FOR PRODUCTION
-
-Then handoff to:
-
-PROJECT OWNER / DEPLOYMENT PROCESS
+STATUS: READY FOR PRODUCTION
+Hand off the recommendation to the PROJECT OWNER / DEPLOYMENT PROCESS.
 
 Do not automatically deploy unless explicitly authorized.
-
-============================================================
-55. STOP CONDITION
-============================================================
-
-STOP after:
-
-1. Production environment evaluated.
-
-2. Build validated.
-
-3. Routes validated.
-
-4. Functional tests completed.
-
-5. Critical user journeys tested.
-
-6. Responsive status verified.
-
-7. Accessibility status verified.
-
-8. SEO status verified.
-
-9. Performance status verified.
-
-10. Security sanity check completed.
-
-11. Integrations tested.
-
-12. Smoke test completed.
-
-13. Defects documented.
-
-14. Machine-readable report created.
-
-15. Release recommendation produced.
-
-Do not redesign the website.
-
-Do not silently modify the website.
-
-Do not claim production readiness without evidence.
+STOP after producing the Production QA deliverables.

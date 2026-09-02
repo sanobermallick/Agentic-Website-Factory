@@ -62,84 +62,24 @@ a collection of disconnected page-specific components.
 INPUTS
 ============================================================
 
-Use these documents as the primary source of truth:
+Use these consolidated documents as the primary source of truth. You do NOT need to read raw granular files, as their requirements are already mapped into these master artifacts:
 
+BUSINESS
 01-business-discovery/business-brief.md
 
-02-ux/sitemap.md
+UX
+02-ux/ux-architecture.md
 
-02-ux/page-architecture.md
-
-02-ux/user-flows.md
-
-02-ux/navigation.md
-
-02-ux/conversion-strategy.md
-
+CONTENT
 03-content/content-strategy.md
 
-03-content/homepage-content.md
+DESIGN
+04-design/ui-ux-design-specification.md
 
-03-content/page-content.md
-
-03-content/services-content.md
-
-03-content/projects-content.md
-
-03-content/trust-content.md
-
-03-content/cta-strategy.md
-
-03-content/content-components.md
-
-04-design/design-direction.md
-
-04-design/ui-page-specifications.md
-
-04-design/component-specifications.md
-
-04-design/design-tokens.md
-
-04-design/responsive-specification.md
-
-04-design/interaction-specification.md
-
-04-design/accessibility-specification.md
-
-04-design/stitch-figma-specification.md
-
-04-design/ai-developer-handoff.md
-
-05-design-system/design-system-overview.md
-
-05-design-system/design-system-tokens.md
-
-05-design-system/component-library.md
-
-05-design-system/component-contracts.md
-
-05-design-system/responsive-system.md
-
-05-design-system/accessibility-system.md
-
-05-design-system/motion-system.md
-
-05-design-system/figma-implementation-guide.md
-
-05-design-system/stitch-implementation-guide.md
-
-05-design-system/ai-studio-implementation-guide.md
-
-05-design-system/claude-agent-implementation-guide.md
-
-If machine-readable files exist, also use:
-
-design-system.tokens.json
-
-design-system.components.json
-
-pages.json
-
+DESIGN SYSTEM
+05-design-system/design-system.md
+05-design-system/design-system.tokens.json
+05-design-system/design-system.components.json
 components.json
 
 ============================================================
@@ -1434,162 +1374,76 @@ Verify:
 ✓ No unnecessary technology has been introduced.
 
 ============================================================
-OUTPUT FILES
+OUTPUT
 ============================================================
 
-Create:
+Return the final deliverables strictly as TWO separate code blocks. 
 
-01 — frontend-architecture.md
+Output ONLY the raw code blocks. Do not include any conversational introductions, explanations, or pleasantries.
 
-02 — technology-stack.md
+### BLOCK 1: frontend-architecture.md
+This is the human-readable Markdown specification. You MUST begin this document with the following metadata block:
 
-03 — project-structure.md
+---
+Artifact: Frontend Architecture Specification
+Producing Agent: 06 - Frontend Architect
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
-04 — routing-architecture.md
+# FRONTEND ARCHITECTURE SPECIFICATION
 
-05 — page-component-map.md
+## 1. Technology Stack & Project Structure
+[Define Framework, Language, Styling approach, State management, and the exact folder structure (e.g., src/components/)]
 
-06 — component-architecture.md
+## 2. Routing & Page Architecture
+[Define all routes, page IDs, and the exact component composition for every page]
 
-07 — data-architecture.md
+## 3. Component Architecture & Data Flow
+[Map design system components to frontend components. Define Props, States, and how data separates from UI]
 
-08 — responsive-architecture.md
+## 4. Design Token Integration
+[Define exactly how design-system.tokens.json will be implemented (e.g., CSS variables, Tailwind config)]
 
-09 — asset-architecture.md
+## 5. Responsive, Asset & Image Architecture
+[Define transformation rules for breakpoints, asset folder structures, and image optimization strategies]
 
-10 — state-management.md
+## 6. Accessibility, SEO & Performance
+[Define semantic HTML rules, form validation, metadata handling, and lazy loading strategies]
 
-11 — form-architecture.md
+## 7. AI Development Contract
+[Explicit rules for Agent 07 (Development) and AI coding agents: do not redesign, reuse tokens, respect IDs, keep content separate]
 
-12 — accessibility-architecture.md
+## 8. Architecture Decisions & Open Questions
+[Document any accepted technical debt, trade-offs, and open questions requiring clarification before development begins]
 
-13 — seo-architecture.md
+***
 
-14 — performance-architecture.md
+### BLOCK 2: frontend-architecture.json
+Output a single, valid JSON block representing the complete technical architecture. Keep structures as flat and predictable as possible.
 
-15 — testing-architecture.md
-
-16 — ai-development-contract.md
-
-17 — architecture-decisions.md
-
-18 — architecture-qa.md
-
-============================================================
-MACHINE-READABLE OUTPUT
-============================================================
-
-Create:
-
-frontend-architecture.json
-
-The JSON must describe:
-
-project
-
-stack
-
-routes
-
-pages
-
-sections
-
-components
-
-tokens
-
-data
-
-assets
-
-responsive rules
-
-integrations
-
-testing
-
-Example:
-
+Example schema:
 {
   "project": {},
+  "stack": {},
   "routes": [],
   "pages": [],
   "components": [],
-  "tokens": {},
+  "tokens_implementation": {},
   "assets": [],
   "integrations": []
 }
-
-The JSON must be valid.
-
-============================================================
-FINAL ARCHITECTURE BLUEPRINT
-============================================================
-
-Finish with:
-
-PROJECT STACK
-
-ARCHITECTURE PATTERN
-
-PROJECT STRUCTURE
-
-ROUTING
-
-PAGE ARCHITECTURE
-
-COMPONENT ARCHITECTURE
-
-DATA ARCHITECTURE
-
-DESIGN TOKEN IMPLEMENTATION
-
-RESPONSIVE ARCHITECTURE
-
-STATE MANAGEMENT
-
-FORM ARCHITECTURE
-
-ACCESSIBILITY
-
-SEO FOUNDATION
-
-PERFORMANCE
-
-TESTING
-
-AI STUDIO IMPLEMENTATION RULES
-
-CLAUDE AGENT IMPLEMENTATION RULES
-
-ARCHITECTURE DECISIONS
-
-OPEN QUESTIONS
-
-CLIENT APPROVAL REQUIRED
 
 ============================================================
 HANDOFF
 ============================================================
 
 The outputs of this agent will be consumed by:
-
 AGENT 07 — DEVELOPMENT AGENT
 
-AGENT 08 — RESPONSIVE QA AGENT
-
-AGENT 09 — ACCESSIBILITY QA AGENT
-
-AGENT 10 — SEO / PERFORMANCE AGENT
-
-AGENT 11 — PRODUCTION QA AGENT
-
 Agent 07 must implement the approved architecture.
+Agent 07 must not redesign the website or change the technology stack without documenting the change.
 
-Agent 07 must not redesign the website.
-
-Agent 07 must not change the technology stack without
-documenting the change.
-
+Do not write the final frontend application code.
 STOP after producing the Frontend Architecture deliverables.

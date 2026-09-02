@@ -49,137 +49,23 @@ The final implementation must be:
 INPUTS
 ============================================================
 
-Read the following before writing implementation code.
-
-BUSINESS
-
-01-business-discovery/business-brief.md
-
-
-UX
-
-02-ux/sitemap.md
-
-02-ux/page-architecture.md
-
-02-ux/user-flows.md
-
-02-ux/navigation.md
-
-02-ux/conversion-strategy.md
-
+Read the following consolidated artifacts before writing implementation code. You do NOT need to read the raw business or UX files, as their requirements are already strictly mapped into these technical documents.
 
 CONTENT
-
 03-content/content-strategy.md
 
-03-content/homepage-content.md
-
-03-content/page-content.md
-
-03-content/services-content.md
-
-03-content/projects-content.md
-
-03-content/trust-content.md
-
-03-content/cta-strategy.md
-
-03-content/content-components.md
-
-
 DESIGN
-
-04-design/design-direction.md
-
-04-design/ui-page-specifications.md
-
-04-design/component-specifications.md
-
-04-design/design-tokens.md
-
-04-design/responsive-specification.md
-
-04-design/interaction-specification.md
-
-04-design/accessibility-specification.md
-
-04-design/stitch-figma-specification.md
-
-04-design/ai-developer-handoff.md
-
+04-design/ui-ux-design-specification.md
+Stitch/Figma design files (Visual Source of Truth)
 
 DESIGN SYSTEM
-
-05-design-system/design-system-overview.md
-
-05-design-system/design-system-tokens.md
-
-05-design-system/component-library.md
-
-05-design-system/component-contracts.md
-
-05-design-system/responsive-system.md
-
-05-design-system/accessibility-system.md
-
-05-design-system/motion-system.md
-
-05-design-system/figma-implementation-guide.md
-
-05-design-system/stitch-implementation-guide.md
-
-05-design-system/ai-studio-implementation-guide.md
-
-05-design-system/claude-agent-implementation-guide.md
-
+05-design-system/design-system.md
+05-design-system/design-system.tokens.json
+05-design-system/design-system.components.json
 
 ARCHITECTURE
-
 06-architecture/frontend-architecture.md
-
-06-architecture/technology-stack.md
-
-06-architecture/project-structure.md
-
-06-architecture/routing-architecture.md
-
-06-architecture/page-component-map.md
-
-06-architecture/component-architecture.md
-
-06-architecture/data-architecture.md
-
-06-architecture/responsive-architecture.md
-
-06-architecture/asset-architecture.md
-
-06-architecture/state-management.md
-
-06-architecture/form-architecture.md
-
-06-architecture/accessibility-architecture.md
-
-06-architecture/seo-architecture.md
-
-06-architecture/performance-architecture.md
-
-06-architecture/testing-architecture.md
-
-06-architecture/ai-development-contract.md
-
-
-MACHINE-READABLE INPUTS
-
-design-system.tokens.json
-
-design-system.components.json
-
-pages.json
-
-components.json
-
-frontend-architecture.json
+06-architecture/frontend-architecture.json
 
 ============================================================
 SOURCE-OF-TRUTH RULE
@@ -1370,116 +1256,49 @@ Files affected:
 Impact:
 
 ============================================================
-36. OUTPUT FILES
+OUTPUT
 ============================================================
 
-The Development Agent primarily produces the actual application
-code.
+The primary output of the Development Agent is the actual application code inside the WEBSITE/ directory. 
 
-Also create:
+Alongside the codebase, you must return a final status deliverable strictly in the following Markdown format. Output ONLY the raw Markdown for this report. You MUST begin the document with the following metadata block:
 
-development-status.md
+---
+Artifact: Development Status Report
+Producing Agent: 07 - Development
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
-implementation-changelog.md
+# DEVELOPMENT STATUS REPORT
 
-implementation-notes.md
+## 1. Project & Technology Status
+[Document the actual Technology Stack used, Environment Variables required, and Integration status]
 
-development-qa.md
+## 2. Implementation Checklist
+[List Pages, Components, Routes, and Forms implemented]
 
-============================================================
-37. FINAL DEVELOPMENT VALIDATION
-============================================================
+## 3. Implementation Change Log & Notes
+[Document any significant implementation decisions, deviations from the architecture, and the reasons why]
 
-Before handoff verify:
+## 4. Development QA Results
+[Confirm basic build passes, responsive behavior, accessibility foundations, and SEO foundations]
 
-✓ Design implemented.
-
-✓ Pages implemented.
-
-✓ Components implemented.
-
-✓ Content implemented.
-
-✓ Assets implemented.
-
-✓ Responsive behavior implemented.
-
-✓ Interactions implemented.
-
-✓ Accessibility implemented.
-
-✓ SEO foundation implemented.
-
-✓ Performance foundations implemented.
-
-✓ Forms implemented.
-
-✓ Error states implemented.
-
-✓ Build passes.
-
-✓ Type checking passes where applicable.
-
-✓ Linting passes where applicable.
-
-✓ No known critical errors remain.
-
-============================================================
-FINAL DEVELOPMENT REPORT
-============================================================
-
-Finish with:
-
-PROJECT STATUS
-
-TECHNOLOGY STACK
-
-PAGES IMPLEMENTED
-
-COMPONENTS IMPLEMENTED
-
-ROUTES IMPLEMENTED
-
-FORMS IMPLEMENTED
-
-INTEGRATIONS
-
-RESPONSIVE STATUS
-
-ACCESSIBILITY STATUS
-
-SEO FOUNDATION STATUS
-
-PERFORMANCE STATUS
-
-TESTING STATUS
-
-KNOWN ISSUES
-
-MISSING ASSETS
-
-MISSING CONTENT
-
-ENVIRONMENT VARIABLES
-
-NEXT AGENT
+## 5. Known Issues & Blockers
+[List missing assets, missing content, and any known critical errors remaining]
 
 ============================================================
 HANDOFF
 ============================================================
 
-The completed application will be consumed by:
-
+The completed application and this status report will be consumed by:
 AGENT 08 — RESPONSIVE QA AGENT
-
 AGENT 09 — ACCESSIBILITY QA AGENT
-
 AGENT 10 — SEO / PERFORMANCE AGENT
-
 AGENT 11 — PRODUCTION QA AGENT
 
 Do not declare the website production-ready.
-
 Agent 08–11 must independently validate the implementation.
 
 STOP after completing the Development deliverables.

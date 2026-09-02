@@ -423,7 +423,16 @@ That belongs to downstream agents.
 OUTPUT
 ============================================================
 
-Return the final deliverable in the following structure:
+Return the final deliverable strictly in the following Markdown format. You MUST begin the document with the following metadata block:
+Output ONLY the raw Markdown. Do not include any conversational introductions, explanations, or pleasantries."
+
+---
+Artifact: Business Brief
+Producing Agent: 01 - Business Discovery
+Project: [Extract from input or use Placeholder]
+Status: REVIEW_PENDING
+Last Updated: [YYYY-MM-DD]
+---
 
 # BUSINESS DISCOVERY BRIEF
 
@@ -462,6 +471,7 @@ Return the final deliverable in the following structure:
 ## 17. Requires Client Clarification
 
 ## 18. Website Strategy Recommendations
+
 
 ## 19. Source Confidence
 

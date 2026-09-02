@@ -64,7 +64,8 @@ project/
 ├── styles/
 ├── services/
 ├── utils/
-└── 
+└──
+``` 
 # 4. ROUTING
 | Route | Page | Type | Authentication | Status |
 |-------|------|------|----------------|--------|
@@ -73,7 +74,8 @@ project/
 | /services | Services | Public | None | |
 | /projects | Projects | Public | None | |
 | /contact | Contact | Public | None | |
-# 5. COMPONENT ARCHITECTURE
+
+
 # 5. COMPONENT ARCHITECTURE
 
 ## Global Components
